@@ -3,7 +3,14 @@
 A Spring Boot application demonstrating Model Context Protocol (MCP) server implementation with weather forecasting and courier tracking services.
 
 ## Architecture Documentation
-See the [Architecture Diagrams](docs/diagrams/architecture.md) for detailed class and sequence diagrams showing the system's structure and interactions.
+
+The project's architecture is documented through several Mermaid diagrams:
+
+- [Class Diagram](docs/diagrams/class-diagram.md) - System components and their relationships
+- [Weather Service Flow](docs/diagrams/weather-sequence.md) - Weather forecast request flow
+- [Courier Service Flow](docs/diagrams/courier-sequence.md) - Package tracking flow
+
+See the [diagrams documentation](docs/diagrams/README.md) for more details.
 
 ## Project Structure
 ```
