@@ -1,9 +1,6 @@
 # Class Diagram
 
 ```mermaid
----
-title: Java MCP Tools Class Diagram
----
 classDiagram
     class McpServerApplication {
         +main(String[] args)
@@ -31,14 +28,20 @@ classDiagram
     class Alert {
         +List~Feature~ features
     }
+    class TrackingResponse {
+        +String status
+        +String location
+        +String estimatedDelivery
+    }
 
-    McpServerApplication --> WeatherService : uses
-    McpServerApplication --> CourierService : uses
-    WeatherService --> Points : creates
-    WeatherService --> Forecast : creates
-    WeatherService --> Alert : creates
-    CourierService --> "TrackingResponse" : creates
+    McpServerApplication ..> WeatherService : uses
+    McpServerApplication ..> CourierService : uses
+    WeatherService ..> Points : creates
+    WeatherService ..> Forecast : creates
+    WeatherService ..> Alert : creates
+    CourierService ..> TrackingResponse : creates
 
+    %% Service descriptions
     note for WeatherService "Handles weather forecasts and alerts using National Weather Service API"
     note for CourierService "Manages package tracking for FedEx and UPS carriers"
 ```
