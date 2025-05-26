@@ -20,12 +20,15 @@ public class WeatherService {
 	private final RestClient restClient;
 
 	public WeatherService() {
-
-		this.restClient = RestClient.builder()
+		this(RestClient.builder()
 			.baseUrl(BASE_URL)
 			.defaultHeader("Accept", "application/geo+json")
 			.defaultHeader("User-Agent", "WeatherApiClient/1.0 (your@email.com)")
-			.build();
+			.build());
+	}
+
+	public WeatherService(RestClient restClient) {
+		this.restClient = restClient;
 	}
 
 	@JsonIgnoreProperties(ignoreUnknown = true)
